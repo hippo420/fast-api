@@ -5,5 +5,5 @@ def load_allstock_KRX():
     stk_data = pd.read_html(krx_url, header=0, encoding="euc-kr")[0]
     stk_data = stk_data[['회사명', '종목코드']]
     stk_data = stk_data.rename(columns={'회사명': 'isinCd', '종목코드': 'itmsNm'})
-    stk_data['Code'] = stk_data['Code'].apply(lambda x: str(x).zfill(6))
+    stk_data['isinCd'] = stk_data['isinCd'].apply(lambda x: str(x).zfill(6))
     return stk_data.to_dict(orient='records')
