@@ -5,4 +5,4 @@ router = APIRouter()
 
 @router.get("/stocks")
 async def get_krx_stocks():
-    return {"stocks": load_allstock_KRX()}
+    return {"items": load_allstock_KRX()}
