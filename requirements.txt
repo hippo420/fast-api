@@ -5,3 +5,4 @@ lxml
 finance-datareader
 beautifulsoup4
 plotly
+html5lib
