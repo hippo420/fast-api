@@ -7,5 +7,17 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'echo "deploy"'
+      }
+    }
+
+    stage('Process After Deploy') {
+      steps {
+        sh 'echo "Process After Deploy"'
+      }
+    }
+
   }
 }
