@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('check out') {
       steps {
-        sh 'echo "start!!"'
+        git(url: 'https://github.com/hippo420/fast-api.git', branch: 'master')
       }
     }
 
