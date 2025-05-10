@@ -6,7 +6,7 @@ pipeline {
         sh '''echo "Build Stage Start"
 
 #ENV
-export IMAGE_NAME=KRX_FAST_API
+export IMAGE_NAME=krx_fast_api
 export IMAGE_TAG=latest
 
 #DOCKER BUILD
@@ -19,7 +19,7 @@ docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'''
         sh '''echo "Deploy Stage Start"
 
 #ENV
-export CONTAINER_NAME=KRX_FAST_API
+export CONTAINER_NAME=krx_fast_api
 export PORT=3100
 export IMAGE_TAG=latest
 
