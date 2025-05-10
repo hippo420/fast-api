@@ -24,7 +24,7 @@ export PORT=3100
 export IMAGE_TAG=latest
 
 #RUN CONATAINER
-docker rm -f ${CONTAINER_NAME} || true\'
+docker rm -f ${CONTAINER_NAME} || true
 docker run -d --name ${CONTAINER_NAME} -p ${PORT}:${PORT} ${CONTAINER_NAME}:${IMAGE_TAG}
 
 echo "Deploy Stage End"'''
