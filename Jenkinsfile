@@ -1,21 +1,42 @@
 pipeline {
   agent any
   stages {
-    stage('check out') {
+    stage('Build') {
       steps {
-        sh 'echo "check out"'
+        sh '''echo "Build Stage Start"
+
+#ENV
+export IMAGE_NAME=KRX_FAST_API
+export IMAGE_TAG=latest
+
+#DOCKER BUILD
+docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'''
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'echo "deploy"'
+        sh '''echo "Deploy Stage Start"
+
+#ENV
+export CONTAINER_NAME=KRX_FAST_API
+export PORT=3100
+export IMAGE_TAG=latest
+
+#RUN CONATAINER
+docker rm -f ${CONTAINER_NAME} || true\'
+docker run -d --name ${CONTAINER_NAME} -p ${PORT}:${PORT} ${CONTAINER_NAME}:${IMAGE_TAG}
+
+echo "Deploy Stage End"'''
       }
     }
 
     stage('Process After Deploy') {
       steps {
-        sh 'echo "Process After Deploy"'
+        sh '''echo "Process After Deploy start"
+
+
+'''
       }
     }
 
