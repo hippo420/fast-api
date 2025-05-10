@@ -20,7 +20,7 @@ docker run -d -p 3100:3100 --name fast-gaebabja-api-container fast-gaebabja-api
 ```sh
 curl http://localhost:3100/krx/stocks
 curl http://localhost:3100/stock/price/005930
-curl http://localhost:3100/exchange/rate/USD/KRW
+curl http://localhost:3100/exchange/rate/USD
 ```
 
 ## **✅ 정리**
