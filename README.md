@@ -7,7 +7,7 @@
 ### 1️⃣ 로컬 실행
 ```sh
 pip install -r requirements.txt
-uvicorn fast-gaebabja-api.main:app --host 0.0.0.0 --port 3100
+uvicorn fast_gaebabja_api.main:app --host 0.0.0.0 --port 3100
 ```
 
 ### 2️⃣ Docker 실행
